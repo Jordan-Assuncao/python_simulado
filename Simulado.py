@@ -58,23 +58,27 @@ def opcao():
 
 def add_produto(nome, preco, quantidade, categoria):
     i = (len(produtos))
-    novo_produto = {"id": i + 1, "nome": nome, "preco": preco, "quantidade": quantidade, "categoria": categoria}
+    novo_produto = {"ID": i + 1, "nome": nome, "preco": preco, "quantidade": quantidade, "categoria": categoria}
     produtos.append(novo_produto)
     print("Produto adcionado com sucesso!")
 
 
 def delete_produto(id):
-    if id < (len(produtos)):
+    if id <= (len(produtos)):
         for produto in produtos:
             if produto["ID"] == id:
                 produtos.remove(produto)
                 print("Produto deletado com sucesso!")
+        i = id - 1
+        for j in range(i, len(produtos)):
+            produtos[j]["ID"] = produtos[j]["ID"] - 1
     else:
         print("ID invalido.")
+    print(produtos)
 
 
 def edit_produto(id):
-    if id < (len(produtos)):
+    if id <= (len(produtos)):
         for produto in produtos:
             if produto["ID"] == id:
                 nome = input("Digite o nome do produto: ")
