@@ -74,7 +74,7 @@ def delete_produto(id):
             produtos[j]["ID"] = produtos[j]["ID"] - 1
     else:
         print("ID invalido.")
-    print(produtos)
+
 
 
 def edit_produto(id):
@@ -92,7 +92,6 @@ def edit_produto(id):
                 print("Produto editado com sucesso!")
     else:
         print("ID invalido.")
-    print(produtos)
 
 
 def listar_produto_por_categoria(categoria):
